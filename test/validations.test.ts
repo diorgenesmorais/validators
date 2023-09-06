@@ -23,4 +23,10 @@ describe('Validations', () => {
 
         expect(actual).toBeFalsy();
     })
+
+    it('should be not a string of the same characters', () => {
+        const actual = Validations.isCpfInvalid('22222222222');
+
+        expect(actual).toBeTruthy();
+    })
 })

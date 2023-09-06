@@ -17,6 +17,10 @@ export class Validations {
             return true;
         }
 
+        if (this.rejectSequence(cpf)) {
+            return true;
+        }
+
         return false;
     }
 }
