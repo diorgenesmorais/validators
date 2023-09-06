@@ -5,4 +5,10 @@ describe('Validations', () => {
 
         expect(Validations).toBeTruthy();
     })
+
+    it('should to be invalid to vazio', () => {
+        const actual = Validations.isCpfInvalid('');
+
+        expect(actual).toBeTruthy();
+    })
 })
