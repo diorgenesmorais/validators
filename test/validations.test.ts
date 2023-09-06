@@ -29,4 +29,26 @@ describe('Validations', () => {
 
         expect(actual).toBeTruthy();
     })
+
+    it('should contain 11 characters', () => {
+        const actual = Validations.isCpfInvalid('95216670017');
+
+        expect(actual).toBeFalsy();
+    })
+
+    it('should be invalid when contains different amount than 11 characters', () => {
+        const actual = Validations.isCpfInvalid('93.762.735/0001-33');
+
+        expect(actual).toBeTruthy();
+    })
+
+    it('should be cpf invalid', () => {
+        expect(Validations.isCpfInvalid('95216670018')).toBeTruthy();
+        expect(Validations.isCpfInvalid('95216660017')).toBeTruthy();
+        expect(Validations.isCpfInvalid('478.215.841-88')).toBeTruthy();
+    })
+
+    it('should be cpf valid', () => {
+        expect(Validations.isCpfInvalid('478.215.840-88')).toBeFalsy();
+    })
 })
