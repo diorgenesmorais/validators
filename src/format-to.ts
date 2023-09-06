@@ -1,6 +1,6 @@
-export const removeNonDigits = (value: string): string => {
-    if (!value) {
-        return ''
+export const removeNonDigits = (value: string | null): string | null => {
+    if (typeof value !== 'string') {
+        return null
     }
     return value.replace(/\D/g, '')
 }

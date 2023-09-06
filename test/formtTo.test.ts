@@ -12,8 +12,8 @@ describe('FormatTo', () => {
     })
 
     it('should returns empty string', () => {
-        const actual = FormatTo.removeNonDigits('');
+        const actual = FormatTo.removeNonDigits(null);
         
-        expect(actual).toBe('');
+        expect(actual).toBeNull();
     })
 })
