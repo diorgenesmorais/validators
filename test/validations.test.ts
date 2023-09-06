@@ -7,8 +7,20 @@ describe('Validations', () => {
     })
 
     it('should to be invalid to vazio', () => {
-        const actual = Validations.isCpfInvalid('');
+        const actual = Validations.isCpfInvalid(null);
 
         expect(actual).toBeTruthy();
+    })
+
+    it('should be a string of the same characters', () => {
+        const actual = Validations.rejectSequence('22222222222');
+
+        expect(actual).toBeTruthy();
+    })
+
+    it('should be not a string of the same characters', () => {
+        const actual = Validations.rejectSequence(null);
+
+        expect(actual).toBeFalsy();
     })
 })
